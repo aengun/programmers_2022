@@ -1,4 +1,4 @@
-package Level1.x만_간격이_있는_n개의_숫자;
+package Level1.x만큼_간격이_있는_n개의_숫자;
 
 class Solution {
     public long[] solution(int x, int n) {

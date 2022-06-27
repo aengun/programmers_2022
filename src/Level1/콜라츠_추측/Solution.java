@@ -1,4 +1,4 @@
-package Level1.콜라_추측;
+package Level1.콜라츠_추측;
 
 class Solution {
     public int solution(int num) {
