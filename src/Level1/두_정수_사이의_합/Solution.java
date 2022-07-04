@@ -1,0 +1,38 @@
+package Level1.두_정수_사이의_합;
+
+class Solution {
+    public long solution(int a, int b) {
+        long answer = 0;
+
+        if (a == b) return a;
+        else {
+            if (a > b) {
+                int tmp = a;
+                a = b;
+                b = tmp;
+            }
+
+            for (int i = a; i <= b; i++) {
+                answer += i;
+            }
+        }
+
+        return answer;
+    }
+}
+
+// class Solution {
+//     public long solution(int a, int b) {
+//         long answer = 0;
+// if (a > b) {
+// 			int temp = a;
+// 			a = b;
+// 			b = temp;
+// 		}
+
+// 		for (int i = a; i <= b; i++) {
+// 			answer += i;
+// 		}
+//         return answer;
+//     }
+// }
