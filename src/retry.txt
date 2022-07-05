@@ -5,3 +5,8 @@ Lv1
 
 * 컬렉션 배열로 만들기
 * 객체 정렬 람다식으로 하기
+
+* int to char
+    char a = 65; >> a = 'A'
+  char to int
+    int a = (char) 'a'; >> a = 97
