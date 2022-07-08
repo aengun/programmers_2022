@@ -10,3 +10,7 @@ Lv1
     char a = 65; >> a = 'A'
   char to int
     int a = (char) 'a'; >> a = 97
+
+
+Lv2
+컬러링북 -> 원래 배열 복사해서 안 하면 안됨
