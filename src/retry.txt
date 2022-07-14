@@ -16,3 +16,4 @@ Lv2
 컬러링북 -> 원래 배열 복사해서 안 하면 안됨
 단체사진찍기 -> 시간초과나서 참고함 (https://jisunshine.tistory.com/145)
 멀쩡한 사각형 -> 유클리드 호제법, 구현은 쉬우나 패턴을 못찾아 참고함 (https://blog.itcode.dev/posts/2021/12/27/programmers-a0069)
+전화번호 목록 : 정렬하면 쉽게 풀림, 원래코드 시간초과
