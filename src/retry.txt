@@ -18,3 +18,4 @@ Lv2
 멀쩡한 사각형 -> 유클리드 호제법, 구현은 쉬우나 패턴을 못찾아 참고함 (https://blog.itcode.dev/posts/2021/12/27/programmers-a0069)
 전화번호 목록 : 정렬하면 쉽게 풀림, 원래코드 시간초과
 괄호 변환 : 내풀이는 통과 안됨....
+수식 최대화 : https://jangcenter.tistory.com/114 참고
