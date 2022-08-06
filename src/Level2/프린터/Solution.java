@@ -14,17 +14,20 @@ class Solution {
 
         LinkedList<Paper> list = new LinkedList<>();
 
+        // 우선순위와 현재 순서를 가진 paper를 리스트에 추가
         for (int i = 0; i < priorities.length; i++) {
             list.add(new Paper(priorities[i], i));
         }
 
-        boolean flag = true;
+        boolean flag = true; // while문을 돌리기 위한 변수
 
         while (flag) {
+            // 우선 한장을 뽑아본다
             Paper tmp = list.get(0);
             list.remove(0);
             int tmpP = tmp.priority;
             boolean isMax = true;
+            // 리스트를 돌면서 우선순위가 더 높은 것이 있는 지 확인
             for (int i = 0; i < list.size(); i++) {
                 Paper tmp2 = list.get(i);
                 if (tmp2.priority > tmpP) {
@@ -32,6 +35,8 @@ class Solution {
                     break;
                 }
             }
+            // 현재 paper가 우선순위가 가장 높으면 answer++ 아니면 리스트에 다시 추가(맨 뒤로 보냄)
+            // 내가 찾던 paper면 while문 종료
             if (isMax) {
                 answer++;
                 if (tmp.order == location) {
