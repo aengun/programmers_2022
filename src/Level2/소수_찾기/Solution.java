@@ -37,9 +37,10 @@ class Solution {
             }
         }
 
+        // 길이가 1~max값의 길이만큼의 숫자를 순열로 만들기
         for (int i = 1; i <= Integer.toString(max).length(); i++) {
             char[] tmp = new char[i];
-            DFS(i, 0, tmp);
+            DFS(i, 0, tmp); 
         }
 
         return answer;
@@ -48,7 +49,10 @@ class Solution {
     public static void DFS(int i, int L, char[] tmp) {
 
         if (L == i) {
+            // 순열이 완성되면 tmp를 String으로 만들고 그것을 다시 int로 변환한다.
             int num = Integer.parseInt(new String(tmp));
+            // 변환된 숫자가 소수인지 판별
+            // 중복이 있을 수 있으므로 ch배열에 true로 저장
             if (ch[num] == false) {
                 ch[num] = true;
                 answer++;
