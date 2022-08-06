@@ -56,6 +56,7 @@ public class Solution {
         int index = 0;
         int sum = 0;
         if (p.length() == 0) return 0;
+        // 인덱스로 어디까지가 균형잡힌 괄호인지 return
         for (int i = 0; i < p.toCharArray().length; i++) {
             if (p.toCharArray()[i] == '(') {
                 sum += 1;
