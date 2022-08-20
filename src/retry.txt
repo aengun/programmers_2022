@@ -25,3 +25,4 @@ Lv2
 예상 대진표 >> https://ilmiodiario.tistory.com/121
 주식가격 : 9번 줄이 10번줄 if문 안에 있으면 안 되는 이유를 모르겠음
 모음사전 : https://bangu4.tistory.com/241
+교점에 별 만들기 : 통과 못함,,  https://arinnh.tistory.com/85
