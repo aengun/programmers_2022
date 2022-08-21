@@ -28,3 +28,4 @@ Lv2
 교점에 별 만들기 : 통과 못함,,  https://arinnh.tistory.com/85
 점프와 순간이동 : https://velog.io/@hyeon930/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%A0%90%ED%94%84%EC%99%80-%EC%88%9C%EA%B0%84-%EC%9D%B4%EB%8F%99-Java
 3xN 타일링 : https://uyoo-story.tistory.com/22
+n^2 배열 자르기 : https://seongho96.tistory.com/59
