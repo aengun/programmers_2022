@@ -26,3 +26,5 @@ Lv2
 주식가격 : 9번 줄이 10번줄 if문 안에 있으면 안 되는 이유를 모르겠음
 모음사전 : https://bangu4.tistory.com/241
 교점에 별 만들기 : 통과 못함,,  https://arinnh.tistory.com/85
+점프와 순간이동 : https://velog.io/@hyeon930/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%A0%90%ED%94%84%EC%99%80-%EC%88%9C%EA%B0%84-%EC%9D%B4%EB%8F%99-Java
+3xN 타일링 : https://uyoo-story.tistory.com/22
