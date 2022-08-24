@@ -31,3 +31,4 @@ Lv2
 n^2 배열 자르기 : https://seongho96.tistory.com/59
 쿼드압축 후 개수 세기 : https://devdange.tistory.com/entry/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%BF%BC%EB%93%9C%EC%95%95%EC%B6%95-%ED%9B%84-%EA%B0%9C%EC%88%98-%EC%84%B8%EA%B8%B0-for-JAVA-%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5
 스킬트리 : 틀림
+멀리뛰기 : 런타임에러 주의(dp배열 만들면 안됨)
