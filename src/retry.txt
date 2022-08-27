@@ -34,3 +34,4 @@ n^2 배열 자르기 : https://seongho96.tistory.com/59
 멀리뛰기 : 런타임에러 주의(dp배열 만들면 안됨)
 k진수에서 소수 개수 구하기 : 자료형 조심
 가장 큰 정사각형 찾기 : dp로 풀어야함,, https://small-stap.tistory.com/40
+숫자 블록 : https://taehoung0102.tistory.com/193 힌트 얻음
