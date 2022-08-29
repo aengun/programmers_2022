@@ -2,43 +2,32 @@ package Level2.줄_서는_방법;
 
 import java.util.*;
 
+import java.util.*;
+
 class Solution {
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(new Solution().solution(2,1)));
-    }
-
-
-    static long[] factorial = new long[21];
-
     public int[] solution(int n, long k) {
-        int[] answer = new int[n];
-
-        factorial[0] = 1;
+        int[] answer = {};
 
         ArrayList<Integer> list = new ArrayList<>();
+        long[] factorial = new long[n + 1];
+        factorial[0] = 1;
+        factorial[1] = 1;
+        for (int i = 1; i <= n; i++) {
+            factorial[i] = factorial[i - 1] * i;
+        }
 
-        for(int i = 1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
             list.add(i);
         }
 
-        // System.out.println(list);
+        answer = new int[n];
+        long remain = k - 1;
 
-        for(int i = 1; i <= 20; i++){
-            factorial[i] = i * factorial[i-1];
-        }
-
-        // System.out.println(Arrays.toString(factorial));
-
-        for(int i = 0; i < n; i++) {
-
-            long f = factorial[n-i-1];
-            System.out.println((int) ((long)k / f)+" / "+ f);
-            answer[i] = list.get((int) ((long)k / f));
-            list.remove((int)((long)k/f));
-            k = k % f;
-            // System.out.println(f);
-
+        for (int i = 0; i < n; i++) {
+            long value = (int) (remain / factorial[n - i - 1]);
+            remain = (int) (remain % factorial[n - i - 1]);
+            answer[i] = list.get((int) value);
+            list.remove((int) value);
         }
 
         return answer;
