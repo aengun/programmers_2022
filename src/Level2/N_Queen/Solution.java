@@ -4,59 +4,53 @@ import java.util.*;
 
 class Solution {
 
-    public static void main(String[] args) {
-        System.out.println(new Solution().solution(4));
-    }
-
-    static int[] arr;
-    static int m;
+    static int[] combi;
     static boolean[] check;
-    static int answer;
+    static int depth;
+    static int count = 0;
 
     public int solution(int n) {
-        answer = 0;
-        m = n;
-        arr = new int[n];
+        int answer = 0;
+
+        combi = new int[n];
         check = new boolean[n];
+        depth = n;
 
-        DFS(0);
-
+        combination(0);
+        // System.out.println(count);
+        answer = count;
         return answer;
     }
 
-    public static void DFS(int L) {
-        if (L == m) {
-//            if (possible(3)){
-//                 System.out.println(Arrays.toString(arr));
-            answer++;
-//            }
-            return;
+    public static void combination(int L) {
+
+        if (L == depth) {
+            if (possible(L - 1)) count++;
         } else {
-            for (int i = 0; i < m; i++) {
-                if (check[i] == false) {
+            for (int i = 0; i < depth; i++) {
+                if (!check[i]) {
                     check[i] = true;
-                    arr[i] = L;
-                    if (possible(i)) DFS(L + 1);
+                    if (possible(L - 1)) {
+                        combi[L] = i;
+                        combination(L + 1);
+                    }
                     check[i] = false;
                 }
             }
         }
+
     }
 
-    public static boolean possible(int idx) {
+    public static boolean possible(int n) {
 
-        boolean result = true;
-//        System.out.println(Arrays.toString(arr));
-//        System.out.println(idx);
-        for (int i = 0; i < idx; i++) {
-//            System.out.println(Math.abs(idx - i) + " / " + Math.abs(arr[idx] - arr[i]));
-            if (Math.abs(idx - i) == Math.abs(arr[idx] - arr[i])) {
-//                System.out.println("---------------");
+        for (int i = 0; i < n; i++) {
+            if (Math.abs(n - i) == Math.abs(combi[n] - combi[i])) {
+                // System.out.println(Arrays.toString(combi) + " // " + n + " / " + i);
                 return false;
             }
         }
-//        System.out.println("=====================");
-        return result;
+
+        return true;
 
     }
 
