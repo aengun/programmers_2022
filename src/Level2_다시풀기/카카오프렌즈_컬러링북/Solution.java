@@ -1,6 +1,15 @@
-package Level2.카카오프렌즈_컬러링북;
+package Level2_다시풀기.카카오프렌즈_컬러링북;
 
 class Solution {
+
+    public static void main(String[] args) {
+        int[][] arr = {
+                {1, 1, 1, 0}, {1, 2, 2, 0}, {1, 0, 0, 1}, {0, 0, 0, 1}, {0, 0, 0, 3}, {0, 0, 0, 3}
+        };
+        System.out.println(new Solution().solution(6, 4, arr));
+        int[][] arr2 = {{0, 1, 0}};
+        System.out.println(new Solution().solution(1, 3, arr2));
+    }
 
     static int numberOfArea = 0;
     static int maxSizeOfOneArea = 0;
@@ -9,31 +18,22 @@ class Solution {
     static int tmpCnt;
     static int M;
     static int N;
-    static int[][] pictures;
 
     public int[] solution(int m, int n, int[][] picture) {
 
-        pictures = new int[m][n];
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                pictures[i][j] = picture[i][j];
-            }
-        }
-
-        numberOfArea = 0;
-        maxSizeOfOneArea = 0;
         M = m;
         N = n;
 
+
+
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (pictures[i][j] != 0) {
-                    int color = pictures[i][j];
-                    pictures[i][j] = 0;
+                if (picture[i][j] != 0) {
+                    int color = picture[i][j];
+                    picture[i][j] = 0;
                     numberOfArea++;
                     tmpCnt = 1;
-                    DFS(i, j, color, pictures);
+                    DFS(i, j, color, picture);
                     maxSizeOfOneArea = Math.max(maxSizeOfOneArea, tmpCnt);
                 }
             }
@@ -42,6 +42,8 @@ class Solution {
         int[] answer = new int[2];
         answer[0] = numberOfArea;
         answer[1] = maxSizeOfOneArea;
+        System.out.println(numberOfArea);
+        System.out.println(maxSizeOfOneArea);
         return answer;
 
     }
