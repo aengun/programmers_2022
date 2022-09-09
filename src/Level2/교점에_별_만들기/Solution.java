@@ -4,101 +4,76 @@ import java.util.*;
 
 class Solution {
 
-    public static void main(String[] args) {
-        int[][] arr = new int[][]{
-                {2, -1, 4}, {-2, -1, 4}, {0, -1, 1}, {5, -8, -12}, {5, 8, 12}
-        };
-        int[][] arr2 = new int[][]{
-                {0, 1, -1}, {1, 0, -1}, {1, 0, 1}
-        };
-//        new Solution().solution(arr);
-        new Solution().solution(arr2);
-    }
-
+    static List<long[]> list = new ArrayList<>();
+    static long minX = Long.MAX_VALUE;
+    static long maxX = Long.MIN_VALUE;
+    static long minY = Long.MAX_VALUE;
+    static long maxY = Long.MIN_VALUE;
     static int[] combi = new int[2];
     static boolean[] visited;
-    static int[][] lines;
-    static long minX = Integer.MAX_VALUE;
-    static long minY = Integer.MAX_VALUE;
-    static long maxX = Integer.MIN_VALUE;
-    static long maxY = Integer.MIN_VALUE;
-    static HashSet<Point> set = new HashSet<>();
 
     public String[] solution(int[][] line) {
         String[] answer = {};
 
         visited = new boolean[line.length];
-        lines = line; // line을 static으로 만들기 위함
+        dfs(0, 0, line);
 
-        DFS(0, 0); // 두 직선의 조합 만들기
+        boolean[][] answerMap = new boolean[(int) (maxY - minY + 1)][(int) (maxX - minX + 1)];
 
-        if (minX == maxX && minY == maxY) return new String[]{"*"};
-        long row = maxX - minX + 1;
-        long col = maxY - minY + 1;
-
-        answer = new String[(int) col];
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < row; i++) {
-            sb.append('.');
+        for (long[] a : list) {
+            int x = (int) (a[0] - minX);
+            int y = (int) (a[1] - minY);
+            // answerMap[Math.abs(y)][Math.abs(x)] = true;
+            answerMap[(int) (maxY - minY - y)][x] = true;
         }
 
-        Arrays.fill(answer, sb.toString());
+        answer = new String[answerMap.length];
 
-        long nx, ny;
-        for (Point p : set) {
-            ny = maxY - p.y;
-            nx = p.x - minX;
-            answer[(int) ny] = answer[(int) ny].substring(0, (int) nx) + "*"
-                    + answer[(int) ny].substring((int) nx + 1);
+        int i = 0;
+        for (boolean[] b : answerMap) {
+            StringBuilder sb = new StringBuilder();
+            for (boolean f : b) {
+                if (!f) sb.append('.');
+                else sb.append('*');
+            }
+            answer[i] = sb.toString();
+            i++;
         }
 
         return answer;
     }
 
-    public static void DFS(int L, int start) {
-
+    private static void dfs(int L, int s, int[][] line) {
         if (L == 2) {
 
-            long a = lines[combi[0]][0];
-            long b = lines[combi[0]][1];
-            long e = lines[combi[0]][2];
-            long c = lines[combi[1]][0];
-            long d = lines[combi[1]][1];
-            long f = lines[combi[1]][2];
+            int line1 = combi[0];
+            int line2 = combi[1];
+            long a = line[line1][0];
+            long b = line[line1][1];
+            long e = line[line1][2];
+            long c = line[line2][0];
+            long d = line[line2][1];
+            long f = line[line2][2];
 
-            if (a * b - b * c != 0) {
+            //교점 구하기
+            if (a * d != b * c) {
                 if ((b * f - e * d) % (a * d - b * c) != 0) return;
                 if ((e * c - a * f) % (a * d - b * c) != 0) return;
                 long x = (b * f - e * d) / (a * d - b * c);
                 long y = (e * c - a * f) / (a * d - b * c);
-                set.add(new Point(x, y));
-
-                minX = Math.min(x, minX);
-                minY = Math.min(y, minY);
-                maxX = Math.max(x, maxX);
-                maxY = Math.max(y, maxY);
-
+                minX = Math.min(minX, x);
+                minY = Math.min(minY, y);
+                maxX = Math.max(maxX, x);
+                maxY = Math.max(maxY, y);
+                list.add(new long[]{x, y});
             }
 
         } else {
-
-            for (int i = start; i < visited.length; i++) {
+            for (int i = s; i < line.length; i++) {
                 combi[L] = i;
-                DFS(L + 1, i + 1);
+                dfs(L + 1, i + 1, line);
             }
-
         }
-
     }
 
-}
-
-class Point {
-    long x;
-    long y;
-
-    Point(long x, long y) {
-        this.x = x;
-        this.y = y;
-    }
 }
