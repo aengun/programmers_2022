@@ -32,6 +32,7 @@ class Solution {
 
         for (int i = 1; i <= numOfCol; i++) {
             DFS(relation, i, 0, 0);
+            System.out.println("===");
         }
 
         return answer;
@@ -41,6 +42,7 @@ class Solution {
 
         if (L == n) {
             //조합이 만들어지면 판단
+            System.out.println(Arrays.toString(combi));
             isPossible(relation, n, combi);
         } else {
             for (int i = s; i < numOfCol; i++) {
