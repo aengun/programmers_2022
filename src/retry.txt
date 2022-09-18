@@ -45,6 +45,7 @@ JadeCase 문자열 만들기 : 원래 풀이는 런타임 에러 ,, https://tech
 하노이의 탑,,,, 재귀를 잘 해보자
 순위 검색 : https://jisunshine.tistory.com/153
 멀쩡한 사각형, 예상 대진표,,,
+거리두기 확인하기, 두 큐 합 같게 하기, 멀쩡한 사각형, 전력망을 둘로 나누기 => 다시 안풂
 
 Lv3
 코딩 테스트 공부 : dp,, 그냥 보고 풂 https://taehoung0102.tistory.com/211
