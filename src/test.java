@@ -17,7 +17,6 @@ class Solution {
         list = new ArrayList<>();
         list.add(l1);
         list.add(l2);
-        dfs(0);
     }
 
     public boolean solution(String[] phone_book) {
