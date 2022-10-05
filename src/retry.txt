@@ -56,3 +56,5 @@ Lv3
 추석 트래픽 : 풀이 방식을 모르겠어서 그냥 참고 https://geunzrial.tistory.com/26
 최고의 집합 : https://gre-eny.tistory.com/182
 야근지수 : priority queue 사용하자
+징검다리 건너기 >> 시간초과
+가장 먼 노드 : 블로그 참고 https://jgeun97.tistory.com/144
