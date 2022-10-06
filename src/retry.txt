@@ -59,3 +59,4 @@ Lv3
 징검다리 건너기 >> 시간초과
 가장 먼 노드 : 블로그 참고 https://jgeun97.tistory.com/144
 섬 연결하기 : 크루스칼
+스티커 모으기 : https://excited-hyun.tistory.com/193
