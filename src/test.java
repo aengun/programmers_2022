@@ -1,6 +1,24 @@
 import java.util.*;
 
 class Solution {
+
+    static ArrayList<ArrayList<String>> list;
+    static ArrayList<String> tmp = new ArrayList<>();
+    public static void main(String[] args) {
+        ArrayList<String> l1 = new ArrayList<>();
+        l1.add("a");
+        l1.add("b");
+        l1.add("c");
+        ArrayList<String> l2 = new ArrayList<>();
+        l2.add("가");
+        l2.add("나");
+        l2.add("다");
+        l2.add("라");
+        list = new ArrayList<>();
+        list.add(l1);
+        list.add(l2);
+    }
+
     public boolean solution(String[] phone_book) {
         boolean answer = true;
 
